@@ -28,7 +28,9 @@ Use os mesmos valores do seu `.env.local` local.
 
 Para **Cloudflare Pages** conectado ao Git, deixe o **Deploy command vazio** — o Pages publica o `dist` automaticamente.
 
-Se usar `npx wrangler deploy`, o `wrangler.toml` já inclui `[assets]` apontando para `./dist`.
+> **Não** use `[assets]` no `wrangler.toml` — isso é só para Workers, e quebra o build do Pages.
+
+O roteamento SPA já está em `public/_redirects` (`/* /index.html 200`).
 
 ## 3. Domínio autorizado no Firebase
 
